@@ -1,0 +1,72 @@
+[
+  {
+    "_id": "db55bce0-80b3-11e7-8790-73b60225f736",
+    "_type": "visualization",
+    "_source": {
+      "title": "VulnWhisperer  - Risk: Critical",
+      "visState": "{\n  \"title\": \"VulnWhisperer  - Risk: Critical\",\n  \"type\": \"gauge\",\n  \"params\": {\n    \"addLegend\": true,\n    \"addTooltip\": true,\n    \"gauge\": {\n      \"autoExtend\": false,\n      \"backStyle\": \"Full\",\n      \"colorSchema\": \"Green to Red\",\n      \"colorsRange\": [\n        {\n          \"from\": 0,\n          \"to\": 10000\n        }\n      ],\n      \"gaugeColorMode\": \"Background\",\n      \"gaugeStyle\": \"Full\",\n      \"gaugeType\": \"Metric\",\n      \"invertColors\": false,\n      \"labels\": {\n        \"color\": \"black\",\n        \"show\": false\n      },\n      \"orientation\": \"vertical\",\n      \"percentageMode\": false,\n      \"scale\": {\n        \"color\": \"#333\",\n        \"labels\": false,\n        \"show\": true,\n        \"width\": 2\n      },\n      \"style\": {\n        \"bgColor\": true,\n        \"bgFill\": \"white\",\n        \"fontSize\": \"34\",\n        \"labelColor\": false,\n        \"subText\": \"Risk\"\n      },\n      \"type\": \"simple\",\n      \"useRanges\": false,\n      \"verticalSplit\": false\n    },\n    \"type\": \"gauge\"\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"customLabel\": \"Critical Risk\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"enabled\": true,\n      \"type\": \"filters\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"filters\": [\n          {\n            \"input\": {\n              \"query\": {\n                \"query_string\": {\n                  \"query\": \"risk_score_name:critical\"\n                }\n              }\n            },\n            \"label\": \"Critical\"\n          }\n        ]\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "uiStateJSON": "{\n  \"vis\": {\n    \"colors\": {\n      \"0 - 10000\": \"#BF1B00\"\n    },\n    \"defaultColors\": {\n      \"0 - 10000\": \"rgb(0,104,55)\"\n    },\n    \"legendOpen\": false\n  }\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"fc6d1e40-64e8-11e8-9f7e-192d99329fbb\",\n  \"query\": {\n    \"query\": {\n      \"query_string\": {\n        \"analyze_wildcard\": true,\n        \"query\": \"*\"\n      }\n    },\n    \"language\": \"lucene\"\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "d048c220-80b3-11e7-8790-73b60225f736",
+    "_type": "visualization",
+    "_source": {
+      "title": "VulnWhisperer  - Risk: High",
+      "visState": "{\n  \"title\": \"VulnWhisperer  - Risk: High\",\n  \"type\": \"gauge\",\n  \"params\": {\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"type\": \"gauge\",\n    \"gauge\": {\n      \"verticalSplit\": false,\n      \"autoExtend\": false,\n      \"percentageMode\": false,\n      \"gaugeType\": \"Metric\",\n      \"gaugeStyle\": \"Full\",\n      \"backStyle\": \"Full\",\n      \"orientation\": \"vertical\",\n      \"useRanges\": false,\n      \"colorSchema\": \"Green to Red\",\n      \"gaugeColorMode\": \"Background\",\n      \"colorsRange\": [\n        {\n          \"from\": 0,\n          \"to\": 1000\n        }\n      ],\n      \"invertColors\": false,\n      \"labels\": {\n        \"show\": false,\n        \"color\": \"black\"\n      },\n      \"scale\": {\n        \"show\": true,\n        \"labels\": false,\n        \"color\": \"#333\",\n        \"width\": 2\n      },\n      \"type\": \"simple\",\n      \"style\": {\n        \"bgFill\": \"white\",\n        \"bgColor\": true,\n        \"labelColor\": false,\n        \"subText\": \"\",\n        \"fontSize\": \"34\"\n      },\n      \"extendRange\": true\n    }\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"customLabel\": \"High Risk\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"enabled\": true,\n      \"type\": \"filters\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"filters\": [\n          {\n            \"input\": {\n              \"query\": {\n                \"query_string\": {\n                  \"query\": \"risk_score_name:high\"\n                }\n              }\n            },\n            \"label\": \"\"\n          }\n        ]\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "uiStateJSON": "{\n  \"vis\": {\n    \"defaultColors\": {\n      \"0 - 1000\": \"rgb(0,104,55)\"\n    },\n    \"legendOpen\": true,\n    \"colors\": {\n      \"0 - 10000\": \"#EF843C\",\n      \"0 - 1000\": \"#E0752D\"\n    }\n  }\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"fc6d1e40-64e8-11e8-9f7e-192d99329fbb\",\n  \"query\": {\n    \"query\": {\n      \"query_string\": {\n        \"query\": \"*\",\n        \"analyze_wildcard\": true\n      }\n    },\n    \"language\": \"lucene\"\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "e46ff7f0-897d-11e7-934b-67cec0a7da65",
+    "_type": "visualization",
+    "_source": {
+      "title": "VulnWhisperer  - Risk: Low",
+      "visState": "{\n  \"title\": \"VulnWhisperer  - Risk: Low\",\n  \"type\": \"gauge\",\n  \"params\": {\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"type\": \"gauge\",\n    \"gauge\": {\n      \"verticalSplit\": false,\n      \"autoExtend\": false,\n      \"percentageMode\": false,\n      \"gaugeType\": \"Metric\",\n      \"gaugeStyle\": \"Full\",\n      \"backStyle\": \"Full\",\n      \"orientation\": \"vertical\",\n      \"useRanges\": false,\n      \"colorSchema\": \"Green to Red\",\n      \"gaugeColorMode\": \"Background\",\n      \"colorsRange\": [\n        {\n          \"from\": 0,\n          \"to\": 10000\n        }\n      ],\n      \"invertColors\": false,\n      \"labels\": {\n        \"show\": false,\n        \"color\": \"black\"\n      },\n      \"scale\": {\n        \"show\": true,\n        \"labels\": false,\n        \"color\": \"#333\",\n        \"width\": 2\n      },\n      \"type\": \"simple\",\n      \"style\": {\n        \"bgFill\": \"white\",\n        \"bgColor\": true,\n        \"labelColor\": false,\n        \"subText\": \"\",\n        \"fontSize\": \"34\"\n      },\n      \"extendRange\": false\n    }\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"customLabel\": \"Low Risk\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"enabled\": true,\n      \"type\": \"filters\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"filters\": [\n          {\n            \"input\": {\n              \"query\": {\n                \"query_string\": {\n                  \"query\": \"risk_score_name:low\"\n                }\n              }\n            },\n            \"label\": \"Low Risk\"\n          }\n        ]\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "uiStateJSON": "{\n  \"vis\": {\n    \"defaultColors\": {\n      \"0 - 10000\": \"rgb(0,104,55)\"\n    },\n    \"legendOpen\": true,\n    \"colors\": {\n      \"0 - 10000\": \"#629E51\"\n    }\n  }\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"fc6d1e40-64e8-11e8-9f7e-192d99329fbb\",\n  \"query\": {\n    \"query\": {\n      \"query_string\": {\n        \"query\": \"*\",\n        \"analyze_wildcard\": true\n      }\n    },\n    \"language\": \"lucene\"\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "c1361da0-80b3-11e7-8790-73b60225f736",
+    "_type": "visualization",
+    "_source": {
+      "title": "VulnWhisperer  - Risk: Medium",
+      "visState": "{\n  \"title\": \"VulnWhisperer  - Risk: Medium\",\n  \"type\": \"gauge\",\n  \"params\": {\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"type\": \"gauge\",\n    \"gauge\": {\n      \"verticalSplit\": false,\n      \"autoExtend\": false,\n      \"percentageMode\": false,\n      \"gaugeType\": \"Metric\",\n      \"gaugeStyle\": \"Full\",\n      \"backStyle\": \"Full\",\n      \"orientation\": \"vertical\",\n      \"useRanges\": false,\n      \"colorSchema\": \"Green to Red\",\n      \"gaugeColorMode\": \"Background\",\n      \"colorsRange\": [\n        {\n          \"from\": 0,\n          \"to\": 10000\n        }\n      ],\n      \"invertColors\": false,\n      \"labels\": {\n        \"show\": false,\n        \"color\": \"black\"\n      },\n      \"scale\": {\n        \"show\": true,\n        \"labels\": false,\n        \"color\": \"#333\",\n        \"width\": 2\n      },\n      \"type\": \"simple\",\n      \"style\": {\n        \"bgFill\": \"white\",\n        \"bgColor\": true,\n        \"labelColor\": false,\n        \"subText\": \"\",\n        \"fontSize\": \"34\"\n      },\n      \"extendRange\": false\n    },\n    \"isDisplayWarning\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"customLabel\": \"Medium Risk\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"enabled\": true,\n      \"type\": \"filters\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"filters\": [\n          {\n            \"input\": {\n              \"query\": {\n                \"query_string\": {\n                  \"query\": \"risk_score_name:medium\"\n                }\n              }\n            },\n            \"label\": \"Medium Risk\"\n          }\n        ]\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "uiStateJSON": "{\n  \"vis\": {\n    \"defaultColors\": {\n      \"0 - 10000\": \"rgb(0,104,55)\"\n    },\n    \"legendOpen\": true,\n    \"colors\": {\n      \"0 - 10000\": \"#EAB839\"\n    }\n  }\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"fc6d1e40-64e8-11e8-9f7e-192d99329fbb\",\n  \"query\": {\n    \"query\": {\n      \"query_string\": {\n        \"query\": \"*\",\n        \"analyze_wildcard\": true\n      }\n    },\n    \"language\": \"lucene\"\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "b2f2adb0-897f-11e7-a2d2-c57bca21b3aa",
+    "_type": "visualization",
+    "_source": {
+      "title": "VulnWhisperer  - Risk: Total",
+      "visState": "{\n  \"title\": \"VulnWhisperer  - Risk: Total\",\n  \"type\": \"gauge\",\n  \"params\": {\n    \"addLegend\": true,\n    \"addTooltip\": true,\n    \"gauge\": {\n      \"autoExtend\": false,\n      \"backStyle\": \"Full\",\n      \"colorSchema\": \"Green to Red\",\n      \"colorsRange\": [\n        {\n          \"from\": 0,\n          \"to\": 10000\n        }\n      ],\n      \"gaugeColorMode\": \"Background\",\n      \"gaugeStyle\": \"Full\",\n      \"gaugeType\": \"Metric\",\n      \"invertColors\": false,\n      \"labels\": {\n        \"color\": \"black\",\n        \"show\": false\n      },\n      \"orientation\": \"vertical\",\n      \"percentageMode\": false,\n      \"scale\": {\n        \"color\": \"#333\",\n        \"labels\": false,\n        \"show\": true,\n        \"width\": 2\n      },\n      \"style\": {\n        \"bgColor\": true,\n        \"bgFill\": \"white\",\n        \"fontSize\": \"34\",\n        \"labelColor\": false,\n        \"subText\": \"Risk\"\n      },\n      \"type\": \"simple\",\n      \"useRanges\": false,\n      \"verticalSplit\": false\n    },\n    \"type\": \"gauge\"\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"customLabel\": \"Total\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"enabled\": true,\n      \"type\": \"filters\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"filters\": [\n          {\n            \"input\": {\n              \"query\": {\n                \"query_string\": {\n                  \"query\": \"*\",\n                  \"analyze_wildcard\": true\n                }\n              }\n            },\n            \"label\": \"Critical\"\n          }\n        ]\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "uiStateJSON": "{\n  \"vis\": {\n    \"colors\": {\n      \"0 - 10000\": \"#64B0C8\"\n    },\n    \"defaultColors\": {\n      \"0 - 10000\": \"rgb(0,104,55)\"\n    },\n    \"legendOpen\": false\n  }\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"fc6d1e40-64e8-11e8-9f7e-192d99329fbb\",\n  \"query\": {\n    \"query\": {\n      \"query_string\": {\n        \"analyze_wildcard\": true,\n        \"query\": \"*\"\n      }\n    },\n    \"language\": \"lucene\"\n  },\n  \"filter\": []\n}"
+      }
+    }
+  }
+]
